@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #181818;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #202020;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 10px;
+            background-color: #282828;
+            border-radius: 10px 10px 0 0;
+        }
+        .details {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .details h4 {
+            margin: 10px 0;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .form-group label {
+            color: #e0e0e0;
+        }
+        .form-control {
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .form-control:focus {
+            background-color: #444;
+            border-color: #007bff;
+        }
+        .btn {
+            background-color: #444;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn:hover {
+            background-color: #555;
+            color: #e0e0e0;
+        }
+        .btn-light {
+            background-color: #555;
+        }
+        .btn-light:hover {
+            background-color: #666;
+        }
+        .btn-dark {
+            background-color: #333;
+        }
+        .btn-dark:hover {
+            background-color: #444;
+        }
+        .btn-danger {
+            background-color: #c82333;
+        }
+        .btn-danger:hover {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Profile</h2>
+        </div>
+        <div class="details">
+            <h4>Username: {{ user.username }}</h4>
+            <p>Email: {{ user.email }}</p>
+            <button class="btn btn-light" onclick="toggleEditForm()">Edit Profile</button>
+        </div>
+        <form method="post" enctype="multipart/form-data" id="editForm" style="display: none;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-light">Save Changes</button>
+            </div>
+        </form>
+        <a href="{% url 'index' %}" class="btn btn-light">Back to Chat</a>
+        <a href="{% url 'signup' %}" class="btn btn-dark">Register New Account</a>
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleEditForm() {
+            const form = document.getElementById('editForm');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
