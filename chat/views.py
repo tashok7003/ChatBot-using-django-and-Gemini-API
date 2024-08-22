@@ -86,7 +86,7 @@ def extract_location_from_message(message):
     return 'India'
 
 def get_gemini_response(message):
-    api_key = 'AIzaSyB4NIuct2DyFSqwHg4wXg2_eziLI1R6MVI'
+    api_key = 'ENTER YOUR GEMINI API'
     url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
     headers = {
         'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ def extract_keywords(query):
     return keywords
 
 def fetch_latest_news(query):
-    api_key = 'c882f547d2bf47dfa826d16e4cc7df33'
+    api_key = 'ENTER YOUR NEWSAPI'
     url = 'https://newsapi.org/v2/everything'
     keywords = extract_keywords(query)
     params = {
@@ -202,7 +202,7 @@ def fetch_latest_news(query):
         return 'Sorry, something went wrong with the news service.'
 
 def get_weather(location):
-    geo_api_key = '73f5b440f2a56843bc99d32e0877df7d'
+    geo_api_key = 'ENTER YOUR OPENWEATHERMAP API'
     geo_url = 'http://api.openweathermap.org/geo/1.0/direct'
     params = {
         'q': location,
