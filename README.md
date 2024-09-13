@@ -185,8 +185,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### **Contact**
 
-- **Author**: [Your Name](https://github.com/your-username)
-- **Project Link**: [CyberBot on GitHub](https://github.com/your-username/CyberBot)
+- **Author**: [Ashok](https://github.com/tashok7003)
+- **Project Link**: [CyberBot on GitHub](https://github.com/tashok7003/CyberBot)
 
 ---
 
