@@ -1,91 +1,113 @@
+---
 
+# 🤖 **CyberBot – AI Chatbot with News & Weather Intelligence**
 
-# **CyberBot - Chatbot with News and Weather Features**
+[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://python.org)
+[![Django](https://img.shields.io/badge/Django-4.x-darkgreen)](https://www.djangoproject.com/)
+[![MySQL](https://img.shields.io/badge/Database-MySQL-orange)](https://www.mysql.com/)
+[![Gemini API](https://img.shields.io/badge/API-Gemini-blueviolet)](https://ai.google.dev/)
+[![NewsAPI](https://img.shields.io/badge/API-NewsAPI-red)](https://newsapi.org/)
+[![OpenWeather](https://img.shields.io/badge/API-OpenWeatherMap-lightblue)](https://openweathermap.org/)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey)](#)
+[![Status](https://img.shields.io/badge/Status-Active-success)](#)
 
-## **Project Overview**
+---
 
-**CyberBot** is a Django-based web application that simulates a chatbot. It provides three core functionalities:
-1. General chat queries handled by the Gemini API.
-2. News updates fetched from NewsAPI.
-3. Weather information fetched from OpenWeatherMap API.
+## 🚀 **Project Overview**
 
-In addition, the application features user registration, login, profile management, and chat history storage. Users can interact with the chatbot, view past conversations, and get updates on news and weather.
+**CyberBot** is a Django-based AI chatbot that provides:
 
-## **Features**
+1. **General Chat Responses** using the **Gemini API**
+2. **Real-Time News Updates** using **NewsAPI**
+3. **Weather Information** using **OpenWeatherMap**
 
-- **User Authentication**: Users can sign up, log in, and manage their profiles.
-- **Chatbot Interaction**: Users can ask general questions and receive responses powered by the Gemini API.
-- **News Updates**: Get the latest news based on custom queries via NewsAPI.
-- **Weather Information**: Fetch current weather details based on location via OpenWeatherMap API.
-- **Chat History**: Chat conversations are stored in the database, and users can view past interactions.
+Along with this, users can create accounts, manage profiles, and view previous chat history.
+The system serves as a complete AI-powered chatbot with multi-feature integration.
 
-## **Project Structure**
+---
+
+## ⭐ **Key Features**
+
+### 🔐 User System
+
+* Secure registration & login
+* Profile management
+* Personalized chat space
+* Stored chat history
+
+### 🤖 Chatbot Features
+
+* General AI responses via Gemini API
+* Technology, business, world news & custom queries
+* Real-time weather updates by location
+
+### 🗂️ Chat History
+
+* Stores all previous conversations
+* Users can revisit and view past chats
+
+---
+
+## 📁 **Project Structure**
 
 ```bash
 cyberbot/
 │
 ├── chatgpt_clone/
-│   ├── __init__.py
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
 │
 ├── chat/
-│   ├── __init__.py
 │   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
 │   ├── models.py
-│   ├── urls.py
+│   ├── forms.py
 │   ├── views.py
-│   ├── templates/
-│   │   ├── chat/
-│   │   │   ├── index.html
-│   │   │   ├── chat_history.html
-│   │   │   ├── login.html
-│   │   │   ├── profile.html
-│   │   │   ├── signup.html
-│   ├── static/
-│       ├── chat/
-│           ├── css/
-│           ├── js/
+│   ├── urls.py
+│
+│   ├── templates/chat/
+│   │   ├── index.html
+│   │   ├── chat_history.html
+│   │   ├── login.html
+│   │   ├── profile.html
+│   │   ├── signup.html
+│
+│   ├── static/chat/
+│       ├── css/
+│       ├── js/
 │
 ├── manage.py
 └── requirements.txt
 ```
 
-## **Installation and Setup**
+---
 
-### 1. **Clone the Repository**
+## ⚙️ **Installation & Setup**
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/tashok7003/CyberBot.git
 cd CyberBot
 ```
 
-### 2. **Create and Activate Virtual Environment**
+### 2️⃣ Create & Activate Virtual Environment
 
 ```bash
-# Create a virtual environment
 python -m venv env
-
-# Activate the virtual environment
-# For Windows:
-env\Scripts\activate
-# For Linux/macOS:
-source env/bin/activate
+env\Scripts\activate       # Windows
+source env/bin/activate    # Linux / macOS
 ```
 
-### 3. **Install Dependencies**
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. **Set Up MySQL Database**
+### 4️⃣ Configure MySQL Database
 
-1. Create a new MySQL database.
-2. Update the `DATABASES` settings in `chatgpt_clone/settings.py` with your database credentials:
+Update `DATABASES` in `chatgpt_clone/settings.py`:
 
 ```python
 DATABASES = {
@@ -100,36 +122,32 @@ DATABASES = {
 }
 ```
 
-### 5. **Apply Migrations**
+### 5️⃣ Run Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 6. **Create Superuser (Admin)**
+### 6️⃣ Create Admin User
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. **Run the Development Server**
+### 7️⃣ Start the Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Open your browser and go to `http://127.0.0.1:8000/` to access the application.
+Visit: **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
 
-### 8. **API Keys Setup**
+---
 
-Make sure you have your API keys for the services you’re using:
+## 🔑 **API Keys Setup**
 
-- **Gemini API** (for general chat responses)
-- **NewsAPI** (for news updates)
-- **OpenWeatherMap API** (for weather info)
-
-Update the `views.py` with your respective API keys:
+Add your API keys inside `views.py`:
 
 ```python
 # Gemini API
@@ -142,48 +160,39 @@ news_api_key = 'YOUR_NEWS_API_KEY'
 geo_api_key = 'YOUR_OPENWEATHERMAP_API_KEY'
 ```
 
-## **Usage**
+---
 
-1. **Sign Up/Login**: Create an account or log in.
-2. **Chat**: Start interacting with the chatbot by asking general questions, requesting news updates, or weather information.
-3. **Chat History**: Access your past chats from the "Chat History" section.
-4. **Profile Management**: View and edit your profile information.
+## 🧠 **Usage Guide**
 
-## **Project Features in Detail**
+### 📝 Steps:
 
-- **General Chat**: Users can type any general question, and responses are fetched from the Gemini API.
-- **News**: When users ask for news, the chatbot fetches relevant news articles from NewsAPI.
-  - **Example**: "Give me the latest news on technology."
-- **Weather**: When users ask for weather information, the chatbot fetches the weather data for the specified location using OpenWeatherMap.
-  - **Example**: "What’s the weather today in Bangalore?"
+1. **Create Account / Login**
+2. Ask questions like:
 
-## **Tech Stack**
+   * “Explain quantum computing”
+   * “Latest news on AI”
+   * “Weather in Bangalore”
+3. View your **Chat History**
+4. Update your **Profile Information**
 
-- **Backend**: Django (Python)
-- **Frontend**: HTML5, CSS3, JavaScript (Bootstrap for styling)
-- **Database**: MySQL
-- **APIs**:
-  - **Gemini API**: For general chatbot responses.
-  - **NewsAPI**: For fetching news updates.
-  - **OpenWeatherMap API**: For fetching weather data.
+---
 
-## **Contributing**
+## 🛰️ **Tech Stack**
 
-Contributions are welcome! Please feel free to submit a Pull Request or raise an issue if you find any bugs or have suggestions for improvements.
-
-1. Fork the repository.
-2. Create a new feature branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
+| Component | Technology                   |
+| --------- | ---------------------------- |
+| Backend   | Django (Python)              |
+| Frontend  | HTML, CSS, JS, Bootstrap     |
+| Database  | MySQL                        |
+| APIs      | Gemini, NewsAPI, OpenWeather |
 
 
 ---
 
-### **Contact**
+## 📬 Contact
 
-- **Author**: [Ashok](https://github.com/tashok7003)
-- **Project Link**: [CyberBot on GitHub](https://github.com/tashok7003/CyberBot)
+**Author:** Ashok
+🔗 GitHub: [https://github.com/tashok7003](https://github.com/tashok7003)
+📌 Project Link: [https://github.com/tashok7003/CyberBot](https://github.com/tashok7003/CyberBot)
 
 ---
-
