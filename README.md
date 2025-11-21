@@ -1,4 +1,3 @@
----
 
 # 🤖 **CyberBot – AI Chatbot with News & Weather Intelligence**
 
@@ -11,7 +10,6 @@
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](#)
 [![Status](https://img.shields.io/badge/Status-Active-success)](#)
 
----
 
 ## 🚀 **Project Overview**
 
